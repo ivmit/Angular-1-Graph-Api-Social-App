@@ -1,0 +1,58 @@
+<div class="jumbotron jumbotron-custom" ng-if="loggedIn == false">
+  <h1>Hello</h1>
+  <p class="lead">
+    Press Button and Login With Facebook
+  </p>
+  <p><a class="btn btn-lg btn-primary" ng-href="#/" ng-click="LoggIn()">Login with Facebook!</span></a></p>
+</div>
+
+
+
+<div class="row welcome-row" ng-if="loggedIn == true">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="user-welcome">
+      <img src="images/yeoman.png" alt="" class="img-circle"/>
+      <h2>Hello User</h2>
+      <button type="submit" class="btn btn-default btn-logout" ng-click="Logout()">Logout</button>
+    </div>
+  </div>
+</div>
+
+<div class="row" ng-if="loggedIn == true">
+  <div class="col-md-3 col-md-offset-2">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Your Info</h2>
+        <ul>
+          <li>Username:</li>
+          <li>Birthday:</li>
+          <li>Employment:</li>
+          <li>Email:</li>
+          <li>Gender:</li>
+          <li>Phone:</li>
+        </ul>
+      </div>
+      <div class="col-md-12">
+        <h2>Your Permissions</h2>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-5">
+    <textarea class="form-control message-area" name="message" id="message" cols="20" rows="5"></textarea>
+    <button type="submit" class="btn btn-success btn-post">Post on Facebook</button>
+  </div>
+  <div class="col-md-5">
+    <h2>Your Wall Feed</h2>
+    <p>LoremIPsumdolorsitamet</p>
+  </div>
+</div>
+
