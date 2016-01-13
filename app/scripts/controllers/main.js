@@ -8,15 +8,25 @@
  * Controller of the ngSocialApp
  */
 angular.module('ngSocialApp')
-  .controller('MainCtrl',[ '$scope', function ($scope) {
-    $scope.loggedIn = true;
+  .controller('MainCtrl',[ '$scope','$facebook','$window', function ($scope, $facebook, $window) {
 
+    //a way to keep false or true
+
+    //Login function to FB
     $scope.LoggIn = function(){
-      $scope.loggedIn = true;
+      $facebook.login().then(function(){
+        $window.location.href = '#/facebook';
+      });
     };
 
-    $scope.Logout = function() {
-      $scope.loggedIn = false;
-    };
+
+    $facebook.getLoginStatus().then(function(response){
+      if (response && response.status === "connected"){
+        $window.location.href = '#/facebook';
+      }
+    });
+
+
+
 
   }]);
